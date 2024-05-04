@@ -2,25 +2,30 @@
 import { useState, useEffect } from "react";
 export default function Home() {
   const [data, setData] = useState();
-  useEffect(() => {
-    fetch("/api/Read")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data.data);
-      });
-  }, []);
+  const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   fetch("/api/Read")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data.data);
+  //       setLoading(false);
+  //     });
+  // }, []);
   console.log(data);
   return (
     <main>
-      {data?.map((x) => {
-        return (
-          <div>
-            <p>{x.FIRST_NAME}</p>
-            <p>{x.LAST_NAME}</p>
-            <p>{x.DEPT_ID}</p>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        data?.map((x) => (
+          <div key={x.EMPLOYEE_ID}>
+            <p>
+              First Name: {x.FIRST_NAME} Last Name:{x.LAST_NAME}
+            </p>
+            <p>Salary: {x.SALARY}$</p>
           </div>
-        );
-      })}
+        ))
+      )}
     </main>
   );
 }
