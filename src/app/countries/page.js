@@ -14,18 +14,7 @@ export default function Home() {
   console.log(data);
   return (
     <main>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        data?.map((x) => (
-          <div key={x.EMPLOYEE_ID}>
-            <p>
-              First Name: {x.FIRST_NAME} Last Name:{x.LAST_NAME}
-            </p>
-            <p>Salary: {x.SALARY}$</p>
-          </div>
-        ))
-      )}
+      <p>This is countries</p>
     </main>
   );
 }

@@ -12,7 +12,7 @@ export async function GET(request, context) {
   });
   const data = await connection.execute(`select * from employees`);
   return NextResponse.json({
-    data: context.params.userId,
+    data: context.params.Id,
   });
 }
 
