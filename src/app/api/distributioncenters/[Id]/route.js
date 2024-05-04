@@ -4,15 +4,16 @@ import { NextResponse } from "next/server";
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
 
 export async function GET(request, context) {
-  console.log(context.params);
   let connection = await oracledb.getConnection({
-    user: "filip",
-    password: "filip",
+    user: "oracleproject",
+    password: "oracleproject",
     connectionString: "//localhost:1521/global_oracle",
   });
-  const data = await connection.execute(`select * from employees`);
+  const data = await connection.execute(
+    `select * from distributioncenters where id = ${context.params.Id}`
+  );
   return NextResponse.json({
-    data: context.params.Id,
+    data: data.rows,
   });
 }
 
