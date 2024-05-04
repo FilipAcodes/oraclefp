@@ -10,9 +10,7 @@ export async function GET(request, context) {
     connectionString: "//localhost:1521/global_oracle",
   });
   const data = await connection.execute(`select * from distributioncenters`);
-  data.rows.filter((x) => {
-    return x.EMPLOYEE_ID === 101;
-  });
+
   return NextResponse.json({
     data: data.rows,
   });

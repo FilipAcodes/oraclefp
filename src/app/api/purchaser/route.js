@@ -5,14 +5,12 @@ oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
 
 export async function GET(request, context) {
   let connection = await oracledb.getConnection({
-    user: "filip",
-    password: "filip",
+    user: "oracleproject",
+    password: "oracleproject",
     connectionString: "//localhost:1521/global_oracle",
   });
-  const data = await connection.execute(`select * from employees`);
-  data.rows.filter((x) => {
-    return x.EMPLOYEE_ID === 101;
-  });
+  const data = await connection.execute(`select * from purchaser`);
+
   return NextResponse.json({
     data: data.rows,
   });
