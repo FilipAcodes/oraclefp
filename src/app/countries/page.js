@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-import "./table.css";
+import "../table.css";
 
 export default function Home() {
   const [data, setData] = useState();

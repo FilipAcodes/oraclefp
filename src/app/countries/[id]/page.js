@@ -2,7 +2,7 @@
 import { useParams } from "next/navigation";
 import React from "react";
 import { useState, useEffect } from "react";
-import "../table.css";
+import "../../table.css";
 export default function page() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
