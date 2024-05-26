@@ -1,6 +1,5 @@
 const oracledb = require("oracledb");
 import { NextResponse } from "next/server";
-
 oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
 
 export async function GET(request, context) {
