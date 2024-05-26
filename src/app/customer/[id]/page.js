@@ -47,7 +47,10 @@ export default function page() {
                 <th>{e.LNAME}</th>
                 <th>{e.ADDRESS}</th>
                 <th>{e.CITY}</th>
-                <th onClick={() => router.push(`/countries/${e.COUNTRY_ID}`)}>
+                <th
+                  onClick={() => router.push(`/countries/${e.COUNTRY_ID}`)}
+                  className="sendTo"
+                >
                   {e.COUNTRY_ID}
                 </th>
                 <th>{e.EMAIL}</th>

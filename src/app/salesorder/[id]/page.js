@@ -40,15 +40,24 @@ export default function page() {
             const formattedDateOrdered = dateOrdered.toLocaleString();
             return (
               <tr key={e.ID}>
-                <td onClick={() => router.push(`/salesorder/${e.ID}`)}>
+                <td
+                  onClick={() => router.push(`/salesorder/${e.ID}`)}
+                  className="sendTo"
+                >
                   {e.ID}
                 </td>
-                <th onClick={() => router.push(`/customer/${e.CUSTOMER_ID}`)}>
+                <th
+                  onClick={() => router.push(`/customer/${e.CUSTOMER_ID}`)}
+                  className="sendTo"
+                >
                   {e.CUSTOMER_ID}
                 </th>
                 <th>{formattedDateOrdered}</th>
                 <th>{e.PRICE}</th>
-                <th onClick={() => router.push(`/product/${e.PRODUCT_ID}`)}>
+                <th
+                  onClick={() => router.push(`/product/${e.PRODUCT_ID}`)}
+                  className="sendTo"
+                >
                   {e.PRODUCT_ID}
                 </th>
                 <th>{e.QTE}</th>
@@ -56,6 +65,7 @@ export default function page() {
                   onClick={() =>
                     router.push(`/salespersons/${e.SALESPERSON_ID}`)
                   }
+                  className="sendTo"
                 >
                   {e.SALESPERSON_ID}
                 </th>

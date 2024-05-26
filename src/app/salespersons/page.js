@@ -42,7 +42,10 @@ export default function Home() {
             const formattedCurrentDate = currentDate.toLocaleString();
             return (
               <tr key={e.ID}>
-                <td onClick={() => router.push(`/salespersons/${e.ID}`)}>
+                <td
+                  onClick={() => router.push(`/salespersons/${e.ID}`)}
+                  className="sendTo"
+                >
                   {e.ID}
                 </td>
                 <td>{e.ADDRESS}</td>
@@ -56,6 +59,7 @@ export default function Home() {
                       `/distributioncenters/${e.DISTRIBUTIONCENTER_ID}`
                     )
                   }
+                  className="sendTo"
                 >
                   {e.DISTRIBUTIONCENTER_ID}
                 </th>

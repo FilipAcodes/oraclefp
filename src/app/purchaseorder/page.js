@@ -34,7 +34,10 @@ export default function Home() {
           {data?.map((e) => {
             return (
               <tr key={e.ID}>
-                <td onClick={() => router.push(`/purchaseorder/${e.ID}`)}>
+                <td
+                  onClick={() => router.push(`/purchaseorder/${e.ID}`)}
+                  className="sendTo"
+                >
                   {e.ID}
                 </td>
                 <th
@@ -43,6 +46,7 @@ export default function Home() {
                       `/distributioncenters/${e.DISTRIBUTIONCENTER_ID}`
                     )
                   }
+                  className="sendTo"
                 >
                   {e.DISTRIBUTIONCENTER_ID}
                 </th>
@@ -50,14 +54,21 @@ export default function Home() {
                   onClick={() =>
                     router.push(`/manufacturer/${e.MANUFACTURER_ID}`)
                   }
+                  className="sendTo"
                 >
                   {e.MANUFACTURER_ID}
                 </th>
                 <th>{e.PRICE}$</th>
-                <th onClick={() => router.push(`/product/${e.PRODUCT_ID}`)}>
+                <th
+                  onClick={() => router.push(`/product/${e.PRODUCT_ID}`)}
+                  className="sendTo"
+                >
                   {e.PRODUCT_ID}
                 </th>
-                <th onClick={() => router.push(`/purchaser/${e.PURCHASER_ID}`)}>
+                <th
+                  onClick={() => router.push(`/purchaser/${e.PURCHASER_ID}`)}
+                  className="sendTo"
+                >
                   {e.PURCHASER_ID}
                 </th>
               </tr>

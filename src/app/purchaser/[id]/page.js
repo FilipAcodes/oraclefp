@@ -44,7 +44,10 @@ export default function page() {
             const formattedEmployedDate = employedDate.toLocaleString();
             return (
               <tr key={e.ID}>
-                <td onClick={() => router.push(`/purchaser/${e.ID}`)}>
+                <td
+                  onClick={() => router.push(`/purchaser/${e.ID}`)}
+                  className="sendTo"
+                >
                   {e.ID}
                 </td>
                 <th>{e.ADDRESS}</th>
@@ -57,6 +60,7 @@ export default function page() {
                       `/distributioncenters/${e.DISTRIBUTIONCENTER_ID}`
                     )
                   }
+                  className="sendTo"
                 >
                   {e.DISTRIBUTIONCENTER_ID}
                 </th>

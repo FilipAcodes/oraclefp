@@ -30,7 +30,10 @@ export default function Home() {
           {data?.map((e) => {
             return (
               <tr key={e.ID}>
-                <td onClick={() => router.push(`/productcategory/${e.ID}`)}>
+                <td
+                  onClick={() => router.push(`/productcategory/${e.ID}`)}
+                  className="sendTo"
+                >
                   {e.ID}
                 </td>
                 <th>{e.DESCRIPTION}</th>
