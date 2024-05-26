@@ -17,7 +17,6 @@ export default function page() {
       });
   }, []);
 
-  console.log(data);
   return (
     <>
       <h1>Country Name: {data && data[0].NAME}</h1>

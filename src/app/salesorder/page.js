@@ -15,7 +15,6 @@ export default function Home() {
         setLoading(false);
       });
   }, []);
-  console.log(data);
   return (
     <main>
       <h1>Sales Order</h1>

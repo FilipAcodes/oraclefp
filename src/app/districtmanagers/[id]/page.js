@@ -18,7 +18,6 @@ export default function page() {
         setLoading(false);
       });
   }, []);
-  console.log(data);
 
   return (
     <main>
