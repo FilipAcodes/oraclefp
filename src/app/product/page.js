@@ -23,12 +23,12 @@ export default function Home() {
         <thead>
           <tr>
             <th>Id</th>
-            <th>Color</th>
-            <th>Description</th>
             <th>Name</th>
+            <th>Description</th>
+            <th>Color</th>
             <th>Price</th>
-            <th>Product Category Id</th>
             <th>QTE</th>
+            <th>Product Category Id</th>
             <th>Target Demographic</th>
             <th>Weight</th>
           </tr>

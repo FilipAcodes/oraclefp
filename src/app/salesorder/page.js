@@ -45,7 +45,9 @@ export default function Home() {
                 </th>
                 <th>{formattedDateOrdered}</th>
                 <th>{e.PRICE}</th>
-                <th>{e.PRODUCT_ID}</th>
+                <th onClick={() => router.push(`/product/${e.PRODUCT_ID}`)}>
+                  {e.PRODUCT_ID}
+                </th>
                 <th>{e.QTE}</th>
                 <th
                   onClick={() =>

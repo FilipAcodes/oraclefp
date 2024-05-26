@@ -27,16 +27,15 @@ export default function page() {
           <tr>
             <th>Id</th>
             <th>Customer Id</th>
-            <th>Current Date</th>
             <th>Date Ordered</th>
             <th>Price</th>
+            <th>Product Id</th>
+            <th>Qte</th>
             <th>SalesPerson Id </th>
           </tr>
         </thead>
         <tbody>
           {data?.map((e) => {
-            const currentDate = new Date(e.CURRENTDATE);
-            const formattedCurrentDate = currentDate.toLocaleString();
             const dateOrdered = new Date(e.DATEORDERED);
             const formattedDateOrdered = dateOrdered.toLocaleString();
             return (
@@ -47,9 +46,12 @@ export default function page() {
                 <th onClick={() => router.push(`/customer/${e.CUSTOMER_ID}`)}>
                   {e.CUSTOMER_ID}
                 </th>
-                <th>{formattedCurrentDate}</th>
                 <th>{formattedDateOrdered}</th>
                 <th>{e.PRICE}</th>
+                <th onClick={() => router.push(`/product/${e.PRODUCT_ID}`)}>
+                  {e.PRODUCT_ID}
+                </th>
+                <th>{e.QTE}</th>
                 <th
                   onClick={() =>
                     router.push(`/salespersons/${e.SALESPERSON_ID}`)
