@@ -19,3 +19,5 @@ export async function GET(request, context) {
 //request + context for get inputs
 //request.body for body POST/etc methods
 // context.params gives you everything else
+
+// change {{connection}} into a function to be exported/imported into different files

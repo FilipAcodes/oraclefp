@@ -4,6 +4,9 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid black;
+  overflow: auto;
+  max-width: 80%;
+  max-height: 50%;
 }
 
 td,

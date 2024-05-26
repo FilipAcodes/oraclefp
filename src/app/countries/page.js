@@ -6,6 +6,7 @@ import "../table.css";
 export default function Home() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("/api/countries")
       .then((res) => res.json())
