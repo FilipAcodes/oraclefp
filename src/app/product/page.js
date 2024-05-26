@@ -25,7 +25,6 @@ export default function Home() {
             <th>Id</th>
             <th>Color</th>
             <th>Description</th>
-            <th>Manufacturer Id</th>
             <th>Name</th>
             <th>Price</th>
             <th>Product Category Id</th>
@@ -39,17 +38,11 @@ export default function Home() {
             return (
               <tr key={e.ID}>
                 <td onClick={() => router.push(`/product/${e.ID}`)}>{e.ID}</td>
-                <th>{e.COLOR}</th>
-                <th>{e.DESCRIPTION}</th>
-                <th
-                  onClick={() =>
-                    router.push(`/manufacturer/${e.MANUFACTURER_ID}`)
-                  }
-                >
-                  {e.MANUFACTURER_ID}
-                </th>
                 <th>{e.NAME}</th>
+                <th>{e.DESCRIPTION}</th>
+                <th>{e.COLOR}</th>
                 <th>{e.PRICE}</th>
+                <th>{e.QTE}</th>
                 <th
                   onClick={() =>
                     router.push(`/productcategory/${e.PRODUCTCATEGORY_ID}`)
@@ -57,7 +50,6 @@ export default function Home() {
                 >
                   {e.PRODUCTCATEGORY_ID}
                 </th>
-                <th>{e.QTE}</th>
                 <th>{e.TARGETDEMOGRAPHIC}</th>
                 <th>{e.WEIGHT}</th>
               </tr>
