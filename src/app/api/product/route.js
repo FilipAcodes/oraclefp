@@ -1,14 +1,8 @@
-const oracledb = require("oracledb");
+import { getConnection } from "../connection";
 import { NextResponse } from "next/server";
 
-oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
-
 export async function GET(request, context) {
-  let connection = await oracledb.getConnection({
-    user: "oracleproject",
-    password: "oracleproject",
-    connectionString: "//localhost:1521/global_oracle",
-  });
+  const connection = await getConnection();
   const data = await connection.execute(`select * from product`);
 
   return NextResponse.json({

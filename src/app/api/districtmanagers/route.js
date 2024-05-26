@@ -1,16 +1,9 @@
-const oracledb = require("oracledb");
 import { NextResponse } from "next/server";
-
-oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
+import { getConnection } from "../connection";
 
 export async function GET(request, context) {
-  let connection = await oracledb.getConnection({
-    user: "oracleproject",
-    password: "oracleproject",
-    connectionString: "//localhost:1521/global_oracle",
-  });
+  const connection = await getConnection();
   const data = await connection.execute(`select * from districtmanagers`);
-
   return NextResponse.json({
     data: data.rows,
   });

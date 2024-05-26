@@ -1,6 +1,7 @@
 const oracledb = require("oracledb");
+oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
 
-async function connection() {
+async function getConnection() {
   try {
     let connection = await oracledb.getConnection({
       user: "oracleproject",
@@ -10,7 +11,8 @@ async function connection() {
     return connection;
   } catch (error) {
     console.error("Error establishing connection", error);
+    throw error; // Re-throw the error to handle it elsewhere if needed
   }
 }
 
-module.exports = { connection };
+module.exports = { getConnection };
