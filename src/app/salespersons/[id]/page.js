@@ -27,7 +27,6 @@ export default function page() {
           <tr>
             <th>Id</th>
             <th>Address</th>
-            <th>Comission</th>
             <th>Contact Info</th>
             <th>Date Employed</th>
             <th>Date Left</th>
@@ -52,7 +51,6 @@ export default function page() {
                   {e.ID}
                 </td>
                 <td>{e.ADDRESS}</td>
-                <td>{e.COMMISSION}%</td>
                 <td>{e.CONTACT_INFO}</td>
                 <th>{formattedCurrentDate}</th>
                 <th>{e.DATE_LEFT ? e.DATE_LEFT : "NULL"}</th>
